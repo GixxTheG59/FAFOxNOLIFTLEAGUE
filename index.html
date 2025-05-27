@@ -15,12 +15,12 @@
                         dark: '#0c0d11',
                         darker: '#07080a',
                         accent: '#f04747',
-                        neon: '#00f7ff',
-                        neonPink: '#ff00f7',
+                        neon: '#c724f8',  // Changed to purple
+                        neonYellow: '#f8e71c',  // Added yellow
                         neonOrange: '#ff7b00',
-                        glass: 'rgba(12, 13, 17, 0.3)',
-                        'glass-border': 'rgba(255, 255, 255, 0.08)',
-                        'glass-highlight': 'rgba(255, 255, 255, 0.03)'
+                        glass: 'rgba(12, 13, 17, 0.2)',  // More transparent
+                        'glass-border': 'rgba(255, 255, 255, 0.12)',
+                        'glass-highlight': 'rgba(255, 255, 255, 0.08)'
                     },
                     animation: {
                         'float': 'float 4s ease-in-out infinite',
@@ -39,8 +39,8 @@
                             '50%': { transform: 'translateY(-20px)' },
                         },
                         'neon-glow': {
-                            '0%': { 'box-shadow': '0 0 5px #00f7ff, 0 0 10px #00f7ff, 0 0 20px #00f7ff' },
-                            '100%': { 'box-shadow': '0 0 10px #00f7ff, 0 0 30px #00f7ff, 0 0 60px #00f7ff' }
+                            '0%': { 'box-shadow': '0 0 5px #c724f8, 0 0 10px #c724f8, 0 0 20px #c724f8' },
+                            '100%': { 'box-shadow': '0 0 10px #c724f8, 0 0 30px #c724f8, 0 0 60px #c724f8' }
                         },
                         'neon-pulse': {
                             '0%, 100%': { opacity: 0.8 },
@@ -51,13 +51,13 @@
                             '100%': { transform: 'translateY(0)', opacity: 1 }
                         },
                         'tab-glow': {
-                            '0%': { 'box-shadow': '0 0 5px rgba(0, 247, 255, 0.3)' },
-                            '50%': { 'box-shadow': '0 0 20px rgba(0, 247, 255, 0.6)' },
-                            '100%': { 'box-shadow': '0 0 5px rgba(0, 247, 255, 0.3)' }
+                            '0%': { 'box-shadow': '0 0 5px rgba(199, 36, 248, 0.3)' },
+                            '50%': { 'box-shadow': '0 0 20px rgba(199, 36, 248, 0.6)' },
+                            '100%': { 'box-shadow': '0 0 5px rgba(199, 36, 248, 0.3)' }
                         },
                         'text-glow': {
-                            '0%': { 'text-shadow': '0 0 5px rgba(0, 247, 255, 0.5)' },
-                            '100%': { 'text-shadow': '0 0 15px rgba(0, 247, 255, 0.9)' }
+                            '0%': { 'text-shadow': '0 0 5px rgba(199, 36, 248, 0.5)' },
+                            '100%': { 'text-shadow': '0 0 15px rgba(199, 36, 248, 0.9)' }
                         },
                         'fade-in': {
                             '0%': { opacity: 0 },
@@ -73,7 +73,7 @@
                         sm: '4px',
                         md: '8px',
                         lg: '12px',
-                        xl: '16px',
+                        xl: '20px',  // Increased blur
                     }
                 }
             }
@@ -94,30 +94,32 @@
         }
         
         .gradient-text {
-            background: linear-gradient(90deg, #00f7ff, #ff7b00);
+            background: linear-gradient(90deg, #c724f8, #f8e71c);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         
         .gradient-text-reverse {
-            background: linear-gradient(90deg, #ff7b00, #00f7ff);
+            background: linear-gradient(90deg, #f8e71c, #c724f8);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
         
         .glass-card {
-            background: rgba(12, 13, 17, 0.3);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(12, 13, 17, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+            transition: all 0.3s ease;
         }
         
         .glass-card:hover {
-            background: rgba(12, 13, 17, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(12, 13, 17, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(199, 36, 248, 0.2);
         }
         
         .tab-button {
@@ -135,7 +137,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(199, 36, 248, 0.2), transparent);
             transition: all 0.6s ease;
         }
         
@@ -144,8 +146,8 @@
         }
         
         .active-tab {
-            background: rgba(0, 247, 255, 0.1);
-            border-left: 3px solid #00f7ff;
+            background: rgba(199, 36, 248, 0.1);
+            border-left: 3px solid #c724f8;
             animation: tab-glow 3s ease infinite;
         }
         
@@ -156,13 +158,13 @@
         
         .download-card:hover {
             transform: translateY(-10px) scale(1.02) rotateX(5deg);
-            box-shadow: 0 25px 50px -12px rgba(0, 247, 255, 0.25);
+            box-shadow: 0 25px 50px -12px rgba(199, 36, 248, 0.25);
         }
         
         .neon-btn {
-            background: rgba(0, 247, 255, 0.1);
-            border: 1px solid rgba(0, 247, 255, 0.3);
-            box-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
+            background: rgba(199, 36, 248, 0.1);
+            border: 1px solid rgba(199, 36, 248, 0.3);
+            box-shadow: 0 0 10px rgba(199, 36, 248, 0.2);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -175,7 +177,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(199, 36, 248, 0.2), transparent);
             transition: all 0.6s ease;
         }
         
@@ -184,8 +186,8 @@
         }
         
         .neon-btn:hover {
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
-            border-color: rgba(0, 247, 255, 0.6);
+            box-shadow: 0 0 20px rgba(199, 36, 248, 0.4);
+            border-color: rgba(199, 36, 248, 0.6);
         }
         
         .neon-accent {
@@ -226,7 +228,7 @@
             top: 0.5rem;
             width: 1rem;
             height: 1rem;
-            background: linear-gradient(135deg, #00f7ff 0%, #ff7b00 100%);
+            background: linear-gradient(135deg, #c724f8 0%, #f8e71c 100%);
             clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
             animation: neon-pulse 1.5s ease-in-out infinite;
         }
@@ -263,8 +265,8 @@
             width: 0.75rem;
             height: 0.75rem;
             border-radius: 50%;
-            background-color: #00f7ff;
-            box-shadow: 0 0 10px #00f7ff;
+            background-color: #c724f8;
+            box-shadow: 0 0 10px #c724f8;
             animation: neon-pulse 1.5s ease-in-out infinite;
         }
         
@@ -274,7 +276,7 @@
         
         .download-card:hover .download-icon {
             transform: scale(1.1) rotate(5deg);
-            color: #00f7ff;
+            color: #c724f8;
         }
         
         .nav-link {
@@ -288,7 +290,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #00f7ff, #ff7b00);
+            background: linear-gradient(90deg, #c724f8, #f8e71c);
             transition: width 0.3s ease;
         }
         
@@ -342,7 +344,7 @@
             inset: 0;
             border-radius: inherit;
             padding: 1px;
-            background: linear-gradient(45deg, #00f7ff, #ff7b00);
+            background: linear-gradient(45deg, #c724f8, #f8e71c);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -355,13 +357,60 @@
         }
         
         .brand-logo {
-            text-shadow: 0 0 10px rgba(0, 247, 255, 0.7), 
-                         0 0 20px rgba(255, 123, 0, 0.5);
+            text-shadow: 0 0 10px rgba(199, 36, 248, 0.7), 
+                         0 0 20px rgba(248, 231, 28, 0.5);
             animation: text-glow 2s ease-in-out infinite alternate;
         }
         
         .tab-content-inner {
             animation: fade-in 0.6s ease-out forwards;
+        }
+        
+        /* New styles for server info grid */
+        .server-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .server-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Enhanced glass effect */
+        .glass-card-xl {
+            background: rgba(12, 13, 17, 0.15);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        .glass-card-xl:hover {
+            background: rgba(12, 13, 17, 0.25);
+        }
+        
+        /* Yellow neon accent */
+        .neon-yellow {
+            color: #f8e71c;
+            text-shadow: 0 0 5px rgba(248, 231, 28, 0.5);
+        }
+        
+        .neon-yellow-bg {
+            background-color: #f8e71c;
+            box-shadow: 0 0 10px rgba(248, 231, 28, 0.5);
+        }
+        
+        /* Purple neon accent */
+        .neon-purple {
+            color: #c724f8;
+            text-shadow: 0 0 5px rgba(199, 36, 248, 0.5);
+        }
+        
+        .neon-purple-bg {
+            background-color: #c724f8;
+            box-shadow: 0 0 10px rgba(199, 36, 248, 0.5);
         }
     </style>
 </head>
@@ -369,7 +418,7 @@
     <!-- Floating background elements -->
     <div class="fixed inset-0 overflow-hidden z-0">
         <div class="glow-dot bg-neon w-64 h-64 -top-32 -left-32 animate-pulse-slow"></div>
-        <div class="glow-dot bg-neonOrange w-80 h-80 -bottom-40 -right-40 animate-pulse-slow animation-delay-2000"></div>
+        <div class="glow-dot bg-neonYellow w-80 h-80 -bottom-40 -right-40 animate-pulse-slow animation-delay-2000"></div>
         <div class="glow-dot bg-white w-40 h-40 top-1/4 right-1/3 animate-pulse-slow animation-delay-3000"></div>
     </div>
     
@@ -405,21 +454,13 @@
                     <span class="gradient-text">FAFO</span> x <span class="gradient-text-reverse">NO LIFT</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl">
-                    Experience the ultimate automotive performance with our curated parts, competitive events, and passionate community.
+                    Experience the ultimate automotive performance with our curated packs, competitive events, and passionate community.
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#downloads" class="neon-btn px-8 py-4 text-white rounded-md font-medium text-center uppercase tracking-wider transition flex items-center justify-center">
-                        <i class="fas fa-download mr-3"></i> GET STARTED
-                    </a>
-                    <a href="#server" class="glass-card px-8 py-4 border border-neon/30 rounded-md font-medium text-center uppercase tracking-wider transition flex items-center justify-center hover:bg-glass-highlight neon-border">
-                        <i class="fas fa-server mr-3"></i> SERVER INFO
-                    </a>
-                </div>
             </div>
             <div class="md:w-1/2 flex justify-center relative car-3d">
                 <img src="https://i.imgur.com/JQ1Yf9J.png" alt="Performance Car" class="w-full max-w-xl animate-float">
                 <div class="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-neon opacity-20 blur-3xl"></div>
-                <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-neonOrange opacity-20 blur-3xl"></div>
+                <div class="absolute -top-8 -right-8 w-40 h-40 rounded-full bg-neonYellow opacity-20 blur-3xl"></div>
             </div>
         </div>
         
@@ -436,20 +477,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div class="glass-card p-8 rounded-xl border border-neon/30 stats-card neon-border">
-                    <div class="text-4xl font-bold text-neon mb-2 font-orbitron neon-text">500+</div>
+                    <div class="text-4xl font-bold text-neon mb-2 font-orbitron neon-text">150+</div>
                     <div class="text-gray-400 uppercase tracking-widest text-sm">MEMBERS</div>
                 </div>
-                <div class="glass-card p-8 rounded-xl border border-neonOrange/30 stats-card neon-border">
-                    <div class="text-4xl font-bold text-neonOrange mb-2 font-orbitron neon-text">24/7</div>
+                <div class="glass-card p-8 rounded-xl border border-neonYellow/30 stats-card neon-border">
+                    <div class="text-4xl font-bold text-neonYellow mb-2 font-orbitron neon-text">24/7</div>
                     <div class="text-gray-400 uppercase tracking-widest text-sm">UPTIME</div>
                 </div>
                 <div class="glass-card p-8 rounded-xl border border-neon/30 stats-card neon-border">
-                    <div class="text-4xl font-bold text-white mb-2 font-orbitron neon-text">50+</div>
-                    <div class="text-gray-400 uppercase tracking-widest text-sm">EVENTS</div>
+                    <div class="text-4xl font-bold text-white mb-2 font-orbitron neon-text">50+ Cars</div>
+                    <div class="text-gray-400 uppercase tracking-widest text-sm">(IN ROTATION)</div>
                 </div>
-                <div class="glass-card p-8 rounded-xl border border-neonOrange/30 stats-card neon-border">
-                    <div class="text-4xl font-bold text-white mb-2 font-orbitron neon-text">100+</div>
-                    <div class="text-gray-400 uppercase tracking-widest text-sm">TUNES</div>
+                <div class="glass-card p-8 rounded-xl border border-neonYellow/30 stats-card neon-border">
+                    <div class="text-4xl font-bold text-white mb-2 font-orbitron neon-text">5 MAPS+</div>
+                    <div class="text-gray-400 uppercase tracking-widest text-sm">(IN ROTATION)</div>
                 </div>
             </div>
         </div>
@@ -462,382 +503,60 @@
                 <span class="text-neon font-orbitron tracking-widest neon-text">ESSENTIAL RESOURCES</span>
             </div>
             <h2 class="text-4xl md:text-5xl font-bold mb-6 font-orbitron neon-text">
-                PERFORMANCE <span class="gradient-text">DOWNLOADS</span>
+                FAFO x NO LIFT <span class="gradient-text">DOWNLOADS</span>
             </h2>
             <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                Get our premium performance files and resources to maximize your vehicle's potential.
+                Get our maps and cars in one place!
             </p>
         </div>
         
-        <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Tabs Navigation -->
-            <div class="lg:w-1/4">
-                <div class="glass-card rounded-xl p-1 border border-neon/30 neon-border">
-                    <button onclick="changeTab('essentials')" class="tab-button w-full text-left p-4 active-tab">
-                        <div class="flex items-center">
-                            <i class="fas fa-cog text-neon mr-3"></i>
-                            <span class="neon-text">ESSENTIALS</span>
+        <div class="grid md:grid-cols-2 gap-6 tab-slide">
+            <div class="tab-content-inner">
+                <!-- Car Pack Download -->
+                <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
+                            <i class="fas fa-cogs download-icon text-3xl text-neon"></i>
                         </div>
-                    </button>
-                    <button onclick="changeTab('tunes')" class="tab-button w-full text-left p-4 border-t border-neon/30">
-                        <div class="flex items-center">
-                            <i class="fas fa-car text-neonOrange mr-3"></i>
-                            <span class="neon-text">TUNE FILES</span>
-                        </div>
-                    </button>
-                    <button onclick="changeTab('parts')" class="tab-button w-full text-left p-4 border-t border-neon/30">
-                        <div class="flex items-center">
-                            <i class="fas fa-tools text-neon mr-3"></i>
-                            <span class="neon-text">PARTS GUIDE</span>
-                        </div>
-                    </button>
-                    <button onclick="changeTab('skins')" class="tab-button w-full text-left p-4 border-t border-neon/30">
-                        <div class="flex items-center">
-                            <i class="fas fa-paint-brush text-neonOrange mr-3"></i>
-                            <span class="neon-text">CUSTOM SKINS</span>
-                        </div>
-                    </button>
-                </div>
-                
-                <div class="glass-card rounded-xl p-6 mt-6 border border-neon/30 neon-border">
-                    <h3 class="text-lg font-bold mb-4 neon-text">INSTALLATION GUIDE</h3>
-                    <p class="text-gray-400 text-sm mb-4">Follow our step-by-step guide for seamless file installation.</p>
-                    <a href="#" class="text-neon hover:text-white transition flex items-center text-sm neon-text">
-                        <i class="fas fa-book-open mr-2"></i> View Guide
-                    </a>
+                        <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">REQUIRED</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 neon-text">CAR PACKS</h3>
+                    <p class="text-gray-400 mb-6">Updated car packs for the server.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">v2.8.25</span>
+                        <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
+                            <i class="fas fa-download mr-2"></i> DOWNLOAD
+                        </a>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Tabs Content -->
-            <div class="lg:w-3/4">
-                <!-- Essentials Tab -->
-                <div id="essentials" class="tab-content active">
-                    <div class="grid md:grid-cols-2 gap-6 tab-slide">
-                        <div class="tab-content-inner">
-                            <!-- Download Card 1 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-cogs download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">REQUIRED</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">PERFORMANCE SUITE</h3>
-                                <p class="text-gray-400 mb-6">Complete package with all essential performance modifications and configurations.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v2.8.25</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Download Card 2 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-network-wired download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">REQUIRED</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">ECU TOOLS</h3>
-                                <p class="text-gray-400 mb-6">Complete toolkit for ECU flashing and performance tuning.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v1.1.80</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
+            <div class="tab-content-inner">
+                <!-- Track Pack Download -->
+                <div class="download-card glass-card rounded-xl p-6 border border-neonYellow/30 neon-border">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
+                            <i class="fas fa-car download-icon text-3xl text-neonYellow"></i>
                         </div>
-                        <div class="tab-content-inner">
-                            <!-- Download Card 3 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-car download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">RECOMMENDED</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">NO LIFT PACK</h3>
-                                <p class="text-gray-400 mb-6">Curated collection of performance-tuned configurations for our platform.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v3.2.1</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Download Card 4 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-tachometer-alt download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">RECOMMENDED</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">GAUGES PACK</h3>
-                                <p class="text-gray-400 mb-6">Custom digital gauges and performance monitoring tools.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v2.5.0</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <span class="text-xs bg-neonYellow/20 text-neonYellow px-2 py-1 rounded-full neon-text">REQUIRED</span>
                     </div>
-                </div>
-                
-                <!-- Tunes Tab -->
-                <div id="tunes" class="tab-content">
-                    <div class="grid md:grid-cols-2 gap-6 tab-slide">
-                        <div class="tab-content-inner">
-                            <!-- Tune File 1 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-car-side download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">POPULAR</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">JDM LEGENDS PACK</h3>
-                                <p class="text-gray-400 mb-6">Performance tunes for classic Japanese sports cars.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v2.1.0</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Tune File 2 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-horse download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">NEW</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">HIGH HP PACK</h3>
-                                <p class="text-gray-400 mb-6">Aggressive tunes for high horsepower builds.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v1.5.2</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-content-inner">
-                            <!-- Tune File 3 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-truck-monster download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">ESSENTIAL</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">TRACK DAY PACK</h3>
-                                <p class="text-gray-400 mb-6">Optimized tunes for circuit and track day performance.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v4.3.0</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Tune File 4 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-gas-pump download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">NEW</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">E85 CONVERSION</h3>
-                                <p class="text-gray-400 mb-6">Complete flex fuel conversion package.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v2.0.1</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="text-xl font-bold mb-2 neon-text">TRACK PACKS</h3>
+                    <p class="text-gray-400 mb-6">Updated track packs for the server.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">v3.2.1</span>
+                        <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
+                            <i class="fas fa-download mr-2"></i> DOWNLOAD
+                        </a>
                     </div>
-                </div>
-                
-                <!-- Parts Tab -->
-                <div id="parts" class="tab-content">
-                    <div class="grid md:grid-cols-2 gap-6 tab-slide">
-                        <div class="tab-content-inner">
-                            <!-- Parts Guide 1 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-tools download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">GUIDE</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">TURBO UPGRADES</h3>
-                                <p class="text-gray-400 mb-6">Complete guide to turbo selection and installation.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v1.8.3</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Parts Guide 2 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-cogs download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">GUIDE</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">FUEL SYSTEMS</h3>
-                                <p class="text-gray-400 mb-6">High performance fuel system recommendations.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v2.1.0</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-content-inner">
-                            <!-- Parts Guide 3 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-bolt download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">GUIDE</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">ELECTRICAL UPGRADES</h3>
-                                <p class="text-gray-400 mb-6">Wiring and electrical system enhancements.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v1.5.2</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Parts Guide 4 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-tire download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">GUIDE</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">SUSPENSION SETUP</h3>
-                                <p class="text-gray-400 mb-6">Performance suspension tuning guide.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v3.0.1</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Skins Tab -->
-                <div id="skins" class="tab-content">
-                    <div class="grid md:grid-cols-2 gap-6 tab-slide">
-                        <div class="tab-content-inner">
-                            <!-- Skin Pack 1 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-paint-roller download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">POPULAR</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">SPONSOR PACK</h3>
-                                <p class="text-gray-400 mb-6">Authentic replica liveries from real performance teams.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v1.8.3</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Skin Pack 2 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neon/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-spray-can download-icon text-3xl text-neon"></i>
-                                    </div>
-                                    <span class="text-xs bg-neon/20 text-neon px-2 py-1 rounded-full neon-text">NEW</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">ANIME PACK</h3>
-                                <p class="text-gray-400 mb-6">Vibrant anime-themed liveries for your performance cars.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v1.2.0</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-content-inner">
-                            <!-- Skin Pack 3 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-flag-checkered download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">ESSENTIAL</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">RACING PACK</h3>
-                                <p class="text-gray-400 mb-6">Classic racing liveries and designs.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v2.5.0</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                            
-                            <!-- Skin Pack 4 -->
-                            <div class="download-card glass-card rounded-xl p-6 border border-neonOrange/30 neon-border">
-                                <div class="flex justify-between items-start mb-6">
-                                    <div class="bg-darker/50 rounded-lg p-4 flex justify-center items-center">
-                                        <i class="fas fa-fire download-icon text-3xl text-neonOrange"></i>
-                                    </div>
-                                    <span class="text-xs bg-neonOrange/20 text-neonOrange px-2 py-1 rounded-full neon-text">NEW</span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-2 neon-text">FLAMES PACK</h3>
-                                <p class="text-gray-400 mb-6">Custom flame designs for your vehicle.</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-sm text-gray-500">v1.0.2</span>
-                                    <a href="#" class="neon-btn px-4 py-2 text-white rounded-md text-sm font-medium transition flex items-center">
-                                        <i class="fas fa-download mr-2"></i> DOWNLOAD
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="glass-card rounded-xl p-8 mt-8 border border-neon/30 text-center neon-border">
-                    <h3 class="text-xl font-bold mb-4 neon-text">NEED HELP WITH INSTALLATION?</h3>
-                    <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Join our Discord community for support from experienced members and staff.</p>
-                    <a href="https://discord.gg/yourinvite" target="_blank" class="neon-btn px-8 py-3 text-white rounded-md font-medium inline-flex items-center mx-auto">
-                        <i class="fab fa-discord mr-3"></i> GET SUPPORT ON DISCORD
-                    </a>
                 </div>
             </div>
+        </div>
+                
+        <div class="glass-card rounded-xl p-8 mt-8 border border-neon/30 text-center neon-border">
+            <h3 class="text-xl font-bold mb-4 neon-text">NEED HELP WITH INSTALLATION?</h3>
+            <p class="text-gray-400 mb-6 max-w-2xl mx-auto">Join our Discord community for support from experienced members and staff.</p>
+            <a href="https://discord.gg/eCetEVJTcf" target="_blank" class="neon-btn px-8 py-3 text-white rounded-md font-medium inline-flex items-center mx-auto">
+                <i class="fab fa-discord mr-3"></i> GET SUPPORT ON DISCORD
+            </a>
         </div>
     </section>
 
@@ -856,89 +575,57 @@
                 </p>
             </div>
             
-            <div class="flex flex-col lg:flex-row gap-8 items-center">
-                <div class="lg:w-1/2 relative">
-                    <div class="glass-card rounded-2xl overflow-hidden border border-neon/30 neon-border">
-                        <img src="https://i.imgur.com/3QZJ7Jj.jpg" alt="Performance Community Screenshot" class="w-full h-auto">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                        <div class="absolute bottom-0 left-0 p-6 w-full">
-                            <div class="server-status text-white font-bold text-lg neon-text">SERVER ONLINE</div>
-                            <div class="text-gray-300 mt-1">24 members active now</div>
-                        </div>
+            <!-- Updated Server Info Grid -->
+            <div class="server-info-grid">
+                <!-- Server Features Card -->
+                <div class="glass-card-xl rounded-2xl p-6 border border-neonYellow/30 neon-border">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-star text-neonYellow text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold neon-text">SERVER FEATURES</h3>
                     </div>
-                    
-                    <div class="glass-card rounded-xl p-6 mt-6 border border-neon/30 neon-border">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-trophy text-neonOrange mr-3"></i>
-                            <h3 class="text-lg font-bold neon-text">UPCOMING EVENTS</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="bg-neonOrange/20 text-neonOrange px-3 py-1 rounded-full text-xs mr-3 neon-text">MAY 15</div>
-                                <div>
-                                    <div class="font-medium neon-text">Monthly Dyno Competition</div>
-                                    <div class="text-gray-400 text-sm">$1000 prize pool</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-neon/20 text-neon px-3 py-1 rounded-full text-xs mr-3 neon-text">MAY 22</div>
-                                <div>
-                                    <div class="font-medium neon-text">Newcomer Tuning Day</div>
-                                    <div class="text-gray-400 text-sm">Learn from pros</div>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="bg-neonOrange/20 text-neonOrange px-3 py-1 rounded-full text-xs mr-3 neon-text">JUN 5</div>
-                                <div>
-                                    <div class="font-medium neon-text">Track Day Meetup</div>
-                                    <div class="text-gray-400 text-sm">Road Atlanta</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="space-y-4">
+                        <li class="rule-item neon-text">Realistic performance physics with custom tuning models</li>
+                        <li class="rule-item neon-text">Weekly track rotations with community favorites</li>
+                        <li class="rule-item neon-text">Active admins and professional moderation</li>
+                        <li class="rule-item neon-text">Monthly competitions with prizes</li>
+                        <li class="rule-item neon-text">Custom car handling configurations</li>
+                        <li class="rule-item neon-text">Dedicated racing and drift servers</li>
+                    </ul>
                 </div>
                 
-                <div class="lg:w-1/2">
-                    <div class="glass-card rounded-xl p-8 border border-neon/30 neon-border mb-8">
-                        <h3 class="text-xl font-bold mb-6 text-white flex items-center">
-                            <i class="fas fa-plug text-neon mr-3"></i> CONNECTION DETAILS
-                        </h3>
-                        <div class="space-y-6">
-                            <div>
-                                <div class="text-sm text-gray-400 mb-1">SERVER ADDRESS</div>
-                                <div class="font-mono bg-darker px-4 py-3 rounded-lg border border-neon/30 text-lg neon-text">fafo.nolift.com:9600</div>
+                <!-- Upcoming Events Card -->
+                <div class="glass-card-xl rounded-2xl p-6 border border-neon/30 neon-border">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-calendar-alt text-neon text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold neon-text">UPCOMING EVENTS</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="glass-card p-4 rounded-lg border border-neonYellow/20">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-neonYellow/20 text-neonYellow px-3 py-1 rounded-full text-xs mr-3">TBA</div>
+                                <div class="font-bold neon-text">Friday Night Drift</div>
                             </div>
-                            <div>
-                                <div class="text-sm text-gray-400 mb-1">PASSWORD</div>
-                                <div class="font-mono bg-darker px-4 py-3 rounded-lg border border-neon/30 text-lg neon-text">FAFO2023</div>
+                            <p class="text-gray-400 text-sm">8PM EST | All skill levels welcome</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg border border-neon/20">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-neon/20 text-neon px-3 py-1 rounded-full text-xs mr-3">TBA</div>
+                                <div class="font-bold neon-text">Car Show</div>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <div class="text-sm text-gray-400 mb-1">SLOTS</div>
-                                    <div class="font-mono bg-darker px-4 py-3 rounded-lg border border-neon/30 text-center neon-text">30/30</div>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-400 mb-1">PING</div>
-                                    <div class="font-mono bg-darker px-4 py-3 rounded-lg border border-neon/30 text-center neon-text">28ms</div>
-                                </div>
+                            <p class="text-gray-400 text-sm">Prize Pool</p>
+                        </div>
+                        <div class="glass-card p-4 rounded-lg border border-neonYellow/20">
+                            <div class="flex items-center mb-2">
+                                <div class="bg-neonYellow/20 text-neonYellow px-3 py-1 rounded-full text-xs mr-3">TBA</div>
+                                <div class="font-bold neon-text">Cuttin Up Contest</div>
                             </div>
+                            <p class="text-gray-400 text-sm">Beginner-friendly coaching session</p>
                         </div>
                     </div>
-                    
-                    <div class="glass-card rounded-xl p-8 border border-neon/30 neon-border">
-                        <h3 class="text-xl font-bold mb-6 text-white flex items-center">
-                            <i class="fas fa-star text-neonOrange mr-3"></i> SERVER FEATURES
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="rule-item neon-text">Realistic performance physics with custom tuning models</li>
-                            <li class="rule-item neon-text">Weekly track rotations with community favorites</li>
-                            <li class="rule-item neon-text">Custom dyno system for performance benchmarking</li>
-                            <li class="rule-item neon-text">Active admins and professional moderation</li>
-                            <li class="rule-item neon-text">Monthly performance competitions with cash prizes</li>
-                            <li class="rule-item neon-text">Dedicated tuning server for beginners</li>
-                            <li class="rule-item neon-text">Custom car restrictions for balanced competition</li>
-                            <li class="rule-item neon-text">Live leaderboards and performance rankings</li>
-                        </ul>
+                    <div class="mt-6">
+                        <a href="#" class="glass-card w-full py-3 text-center rounded-md font-medium border border-neon/30 hover:bg-glass-highlight">
+                            <i class="fas fa-calendar-plus mr-2"></i> VIEW ALL EVENTS
+                        </a>
                     </div>
                 </div>
             </div>
@@ -993,8 +680,8 @@
             </div>
         </div>
         
-        <div class="glass-card rounded-xl p-8 border border-neonOrange/30 mt-12 text-center bg-gradient-to-r from-dark/50 to-darker/50 neon-border">
-            <h3 class="text-xl font-bold mb-4 text-neonOrange flex items-center justify-center neon-text">
+        <div class="glass-card rounded-xl p-8 border border-neonYellow/30 mt-12 text-center bg-gradient-to-r from-dark/50 to-darker/50 neon-border">
+            <h3 class="text-xl font-bold mb-4 text-neonYellow flex items-center justify-center neon-text">
                 <i class="fas fa-exclamation-triangle mr-3"></i> CONSEQUENCES
             </h3>
             <p class="text-gray-300 max-w-3xl mx-auto neon-text">
@@ -1014,7 +701,7 @@
                 <a href="#downloads" class="neon-btn px-8 py-4 text-white rounded-md font-medium uppercase tracking-wider transition flex items-center justify-center">
                     <i class="fas fa-download mr-3"></i> GET FILES
                 </a>
-                <a href="https://discord.gg/yourinvite" target="_blank" class="neon-btn px-8 py-4 text-white rounded-md font-medium uppercase tracking-wider transition flex items-center justify-center">
+                <a href="https://discord.gg/eCetEVJTcf" target="_blank" class="neon-btn px-8 py-4 text-white rounded-md font-medium uppercase tracking-wider transition flex items-center justify-center">
                     <i class="fab fa-discord mr-3"></i> JOIN DISCORD
                 </a>
             </div>
@@ -1036,7 +723,7 @@
                         <i class="fas fa-car-side text-neon text-2xl mr-3"></i>
                         <span class="text-xl font-bold font-orbitron neon-text">FAFO x <span class="gradient-text-reverse">NO LIFT</span></span>
                     </div>
-                    <p class="text-gray-400 mb-6 neon-text">The premier automotive performance community since 2018.</p>
+                    <p class="text-gray-400 mb-6 neon-text">The premier automotive performance community since 2024.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-neon transition text-xl"><i class="fab fa-discord"></i></a>
                         <a href="#" class="text-gray-400 hover:text-red-500 transition text-xl"><i class="fab fa-youtube"></i></a>
@@ -1061,7 +748,6 @@
                         <li><a href="#" class="text-gray-400 hover:text-neon transition neon-text">Installation Guide</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-neon transition neon-text">Troubleshooting</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-neon transition neon-text">FAQ</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-neon transition neon-text">Tuning Guide</a></li>
                     </ul>
                 </div>
                 
@@ -1074,7 +760,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fab fa-discord text-gray-400 mr-3"></i>
-                            <span class="text-gray-400 neon-text">discord.gg/fafonolift</span>
+                            <span class="text-gray-400 neon-text">https://discord.gg/eCetEVJTcf</span>
                         </li>
                     </ul>
                 </div>
